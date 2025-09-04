@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    color: #171717;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* 苹果风格的卡片组件 */
+  .apple-card {
+    @apply bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300;
+  }
+  
+  /* 苹果风格的按钮 */
+  .apple-button {
+    @apply inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .apple-button-primary {
+    @apply apple-button bg-gray-900 text-white hover:bg-gray-800 focus:ring-gray-500;
+  }
+  
+  .apple-button-secondary {
+    @apply apple-button bg-gray-100 text-gray-900 hover:bg-gray-200 focus:ring-gray-300;
+  }
+  
+  /* 苹果风格的输入框 */
+  .apple-input {
+    @apply w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm placeholder:text-gray-400 focus:border-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 transition-all duration-200;
+  }
+  
+  /* 苹果风格的文本区域 */
+  .apple-textarea {
+    @apply apple-input resize-none min-h-[120px] font-mono;
+  }
+  
+  /* 磨砂玻璃效果 */
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-xl border border-white/20;
+  }
+  
+  /* 导航栏样式 */
+  .nav-blur {
+    @apply bg-white/95 backdrop-blur-2xl border-b border-gray-100;
+  }
+}
