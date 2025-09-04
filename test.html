@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Helper Tools - 静态测试</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 40px;
+            background: #fff;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .status {
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .success {
+            background: #e6f7ff;
+            border: 1px solid #91d5ff;
+            color: #1890ff;
+        }
+        .error {
+            background: #fff2f0;
+            border: 1px solid #ffccc7;
+            color: #ff4d4f;
+        }
+        button {
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 Code Helper Tools - 部署测试</h1>
+        
+        <div class="status success">
+            ✅ 如果你能看到这个页面，说明Vercel静态部署正常工作！
+        </div>
+        
+        <h2>📋 诊断信息</h2>
+        <p><strong>当前时间:</strong> <span id="current-time"></span></p>
+        <p><strong>用户代理:</strong> <span id="user-agent"></span></p>
+        <p><strong>页面URL:</strong> <span id="page-url"></span></p>
+        
+        <h2>🧪 JavaScript测试</h2>
+        <button onclick="testJS()">点击测试JavaScript</button>
+        <div id="js-result"></div>
+        
+        <h2>🛠️ 预期工具列表</h2>
+        <ul>
+            <li>✨ JSON 格式化工具</li>
+            <li>⏰ 时间戳转换工具</li>
+            <li>🔄 Base64 编码解码工具</li>
+            <li>🆔 UUID 生成器</li>
+            <li>🎯 正则表达式测试器</li>
+            <li>📱 二维码生成工具</li>
+        </ul>
+        
+        <div class="status error" style="margin-top: 40px;">
+            ⚠️ 如果React版本是空白页但能看到这个静态页面，说明问题出在React应用配置上
+        </div>
+    </div>
+    
+    <script>
+        // 显示当前时间
+        document.getElementById('current-time').textContent = new Date().toLocaleString('zh-CN');
+        
+        // 显示用户代理
+        document.getElementById('user-agent').textContent = navigator.userAgent;
+        
+        // 显示页面URL
+        document.getElementById('page-url').textContent = window.location.href;
+        
+        // JavaScript测试函数
+        function testJS() {
+            const result = document.getElementById('js-result');
+            result.innerHTML = '<div class="status success">✅ JavaScript正常工作！时间: ' + new Date().toLocaleTimeString() + '</div>';
+        }
+        
+        console.log('静态HTML页面加载成功');
+        console.log('如果你在浏览器控制台看到这条消息，说明JavaScript正常执行');
+    </script>
+</body>
+</html>
